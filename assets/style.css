@@ -1,0 +1,266 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: white;
+  line-height: 1.6;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(2, 6, 23, 0.7);
+  backdrop-filter: blur(15px);
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 40px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* NAV LINKS */
+.nav-links a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #a78bfa;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #a78bfa;
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background:
+    linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.9)),
+    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-text h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+/* ================= BUTTON ================= */
+.btn {
+  padding: 14px 35px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(167, 139, 250, 0.7);
+}
+
+/* ================= SECTION ================= */
+.content {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* ================= CARD ================= */
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  width: 260px;
+  padding: 25px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.4s;
+
+  /* animasi awal */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* ICON */
+.icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+/* ================= LIST ================= */
+.card ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.card ul li {
+  margin: 6px 0;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* ================= TESTIMONIAL ================= */
+#testimonial .card {
+  font-style: italic;
+}
+
+/* ================= PRICING ================= */
+#pricing .card:nth-child(2) {
+  border: 2px solid #a78bfa;
+  transform: scale(1.08);
+}
+
+/* ================= FORM ================= */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form input {
+  width: 260px;
+  padding: 12px;
+  margin: 8px 0;
+
+  border-radius: 10px;
+  border: none;
+}
+
+.form input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #a78bfa;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  padding: 30px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
